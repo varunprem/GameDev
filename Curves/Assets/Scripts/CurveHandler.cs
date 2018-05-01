@@ -35,7 +35,7 @@ public class CurveHandler : MonoBehaviour
 
     public void DrawCurve()
     {
-        if(checkAlgo == 5)
+        //if(checkAlgo == 5)
             spline.Spline_InterpolatePolynomial();
 
         if (ControlPoints.Count < 2)
@@ -65,20 +65,20 @@ public class CurveHandler : MonoBehaviour
                 float t = i * resolution;
                 //     print(t);
                 // print("loops" + loops);
-                Vector2 newPoint;
+               // Vector2 newPoint;
                 Vector3 newPos;
-                if(checkAlgo == 1)
+                /*if(checkAlgo == 1)
                     newPoint = NLI.NestedLinearInterpolation(ControlPoints, ControlPoints.Count - 1, t);
                 else if(checkAlgo == 2)
                     newPoint = bernstien.BernsteinBasis(ControlPoints, ControlPoints.Count - 1, t);
                 else if(checkAlgo == 3)
                     newPoint = newton.Interpolation_Polynomial(t);
                 else if(checkAlgo == 5)
-                {
+                {*/
                     newPos = spline.pointCalculated(t);
  
                     myline.SetPosition(i, new Vector3(newPos.x, newPos.y, newPos.z));
-                }
+                //}
                // else
                 //    myline.SetPosition(i, new Vector3(newPoint.x, newPoint.y, 12));
 
@@ -98,7 +98,7 @@ public class CurveHandler : MonoBehaviour
 
     void CheckWhichAlgorithm(){
 
-        if (PlayerPrefs.HasKey("Decastleju")){
+       /* if (PlayerPrefs.HasKey("Decastleju")){
 
             checkAlgo = 1;
             NLI = GameObject.Find("Canvas").GetComponent<DeCastleju_Algorithm>();
@@ -117,12 +117,12 @@ public class CurveHandler : MonoBehaviour
 
             checkAlgo = 4;
             splineInterpolation = GameObject.Find("Canvas").GetComponent<SplineInterpolation>();
-        }
-        else if (PlayerPrefs.HasKey("SplineInterpolation3D")){
+        }*/
+        //else if (PlayerPrefs.HasKey("SplineInterpolation3D")){
       
-            checkAlgo = 5;
+           // checkAlgo = 5;
             spline = GameObject.Find("Canvas").GetComponent<SplineInterpolation3D>();
-        }
+        //}
     }
    
    

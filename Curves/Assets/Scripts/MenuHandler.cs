@@ -10,22 +10,22 @@ public class MenuHandler : MonoBehaviour {
 		
 	}
 	
-	public void ChooseAlgorithm(int number){
+	public void ChooseAlgorithm(){
 
         SceneManager.LoadScene("Curves");
-        if (number == 1)
-            PlayerPrefs.SetInt("Decastleju", 1);
+        //if (number == 1)
+        //    PlayerPrefs.SetInt("Decastleju", 1);
 
-        else if (number == 2)
-            PlayerPrefs.SetInt("Bernstein", 1);
+        //else if (number == 2)
+        //    PlayerPrefs.SetInt("Bernstein", 1);
 
-        else if (number == 3)
-            PlayerPrefs.SetInt("Newton", 1);
+        //else if (number == 3)
+        //    PlayerPrefs.SetInt("Newton", 1);
 
-        else if (number == 4)
-            PlayerPrefs.SetInt("SplineInterpolation", 1);
+        //else if (number == 4)
+        //    PlayerPrefs.SetInt("SplineInterpolation", 1);
 
-        else if (number == 5)
+        ////if (number == 5)
             PlayerPrefs.SetInt("SplineInterpolation3D", 1);
     }
 }

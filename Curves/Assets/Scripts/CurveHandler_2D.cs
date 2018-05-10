@@ -34,6 +34,8 @@ public class CurveHandler_2D : MonoBehaviour
 
     public void DrawCurve()
     {
+        if (PlayerPrefs.HasKey("SplineInterpolation"))
+            spline.Spline_InterpolatePolynomial();
 
         if (ControlPoints.Count < 2)
             return;
@@ -46,7 +48,9 @@ public class CurveHandler_2D : MonoBehaviour
 
         //How many loops?
         int loops = Mathf.FloorToInt(1.0f / resolution);
-        //loops *= (ControlPoints.Count - 1);
+
+        if(PlayerPrefs.HasKey("NewtonForm") || PlayerPrefs.HasKey("SplineInterpolation"))
+            loops *= (ControlPoints.Count - 1);
 
 
         myline.positionCount = 0;

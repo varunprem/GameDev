@@ -49,8 +49,10 @@ public class DragObject : MonoBehaviour
         if(PlayerPrefs.HasKey("SplineInterpolation3D"))
             curve.DrawCurve();
 
-        if (PlayerPrefs.HasKey("Bernstein"))
-            _curve.DrawCurve();
+        if (PlayerPrefs.HasKey("Bernstein") || PlayerPrefs.HasKey("DeCastleju") ||
+            PlayerPrefs.HasKey("NewtonForm") || PlayerPrefs.HasKey("SplineInterpolation"))
+                _curve.DrawCurve();
+
     }
 
 }

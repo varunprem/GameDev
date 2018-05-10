@@ -8,10 +8,20 @@ public class DragObject : MonoBehaviour
 
     private Vector3 screenPoint;
     CurveHandler curve;
+    CurveHandler_2D _curve;
 
     void Start(){
+        if (PlayerPrefs.HasKey("Bernstein") || PlayerPrefs.HasKey("DeCastleju") ||
+            PlayerPrefs.HasKey("NewtonForm") || PlayerPrefs.HasKey("SplineInterpolation")){
 
-        curve = GameObject.Find("Canvas").GetComponent<CurveHandler>();
+            _curve = GameObject.Find("Canvas").GetComponent<CurveHandler_2D>();
+
+        }
+
+        if (PlayerPrefs.HasKey("SplineInterpolation3D")){
+
+            curve = GameObject.Find("Canvas").GetComponent<CurveHandler>();
+        }
 
     }
 
@@ -36,7 +46,11 @@ public class DragObject : MonoBehaviour
      
         
         transform.position = curPosition;
-        curve.DrawCurve();
+        if(PlayerPrefs.HasKey("SplineInterpolation3D"))
+            curve.DrawCurve();
+
+        if (PlayerPrefs.HasKey("Bernstein"))
+            _curve.DrawCurve();
     }
 
 }

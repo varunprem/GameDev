@@ -8,17 +8,16 @@ public class UIHandler : MonoBehaviour
     public GameObject source;
     public GameObject wayPoint_Prefab;
     public GameObject _degreeText;
-    CurveHandler beizer;
+    GameObject beizer;
     public int count = 0;
-     public  GameObject line;
-   // public List<Transform> polynomials = new List<Transform>();
+    public  GameObject line;
     bool create = true;
     void Start()
     {
 
         _degreeText = GameObject.Find("PointCount");
-     //   SliderObj = GameObject.Find("Slider").GetComponent<Slider>();
-       beizer = GameObject.Find("Canvas").GetComponent<CurveHandler>();
+
+        beizer = GameObject.Find("Canvas");
     }
     void Draw()
     {
@@ -47,9 +46,21 @@ public class UIHandler : MonoBehaviour
             mousePos.z = 12.0f;
 
             var objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-            beizer.ControlPoints.Add(Instantiate(wayPoint_Prefab, objectPos, Quaternion.identity).transform);
+            if (PlayerPrefs.HasKey("Bernstein") || PlayerPrefs.HasKey("DeCastleju") ||
+             PlayerPrefs.HasKey("NewtonForm") || PlayerPrefs.HasKey("SplineInterpolation"))
+            {
+
+                beizer.gameObject.GetComponent<CurveHandler_2D>().ControlPoints.Add(Instantiate(wayPoint_Prefab, objectPos, Quaternion.identity).transform);
+                beizer.gameObject.GetComponent<CurveHandler_2D>().DrawCurve();
+
+            }
+            if (PlayerPrefs.HasKey("SplineInterpolation3D")){
+
+                beizer.gameObject.GetComponent<CurveHandler>().ControlPoints.Add(Instantiate(wayPoint_Prefab, objectPos, Quaternion.identity).transform);
+                beizer.gameObject.GetComponent<CurveHandler>().DrawCurve();
+
+            }
          //   beizer.Interpolate_Splines();
-            beizer.DrawCurve();
         }      
     }
 

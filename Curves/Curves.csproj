@@ -299,6 +299,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BernstienBasis.cs" />
     <Compile Include="Assets\Scripts\CurveHandler.cs" />
+    <Compile Include="Assets\Scripts\CurveHandler_2D.cs" />
     <Compile Include="Assets\Scripts\DeCastleju_Algorithm.cs" />
     <Compile Include="Assets\Scripts\DragObject.cs" />
     <Compile Include="Assets\Scripts\GaussianElliminationSolver.cs" />

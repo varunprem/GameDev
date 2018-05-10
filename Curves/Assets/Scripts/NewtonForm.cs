@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class NewtonForm : MonoBehaviour {
 
-    CurveHandler _curveHandler;
+    CurveHandler_2D _curveHandler;
     List<Transform> ControlPoints = new List<Transform>();
 	// Use this for initialization
 	void Start () {
-        _curveHandler = GameObject.Find("Canvas").GetComponent<CurveHandler>();
+        _curveHandler = GameObject.Find("Canvas").GetComponent<CurveHandler_2D>();
         ControlPoints = _curveHandler.ControlPoints;
 	}
 

@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5932e1f49e232e248a1bcdc8617c2593
   - enabled: 1
-    path: Assets/Scenes/Curves.unity
+    path: Assets/Scenes/Bernstein.unity
+    guid: 21a2059283d307e40a854bf34e73ab14
+  - enabled: 1
+    path: Assets/Scenes/Curves3D.unity
     guid: cfda1bd415915624ca3eb06d9ffb952c
